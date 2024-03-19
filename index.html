@@ -1,26 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de Textos</title>
     <link rel="stylesheet" href="./src/styles/reset.css">
     <link rel="stylesheet" href="./src/styles/style.css">
+    <link href="
+        https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css
+        " rel="stylesheet">
+    <link rel="icon" href="./src/assets/icons/message-encrypt.png" type="image/x-icon">
 </head>
+
 <body>
-    <main>
+    <main class="grid">
         <header class="header">
-
+            <div class="flex nav">
+                <img class="logo" src="./src/assets/img/alura.png" alt="">
+                <div class="flex btn-switch">
+                    <div class="btn-switch__indicator">
+                        <button class="btn-switch__icon-container">
+                            <span><i class="btn-switch__icon fa-solid"></i></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="user">
+                <textarea class="user-text" name="" id="user-text" placeholder="Ingrese el texto aquí"></textarea>
+            </div>
         </header>
-        <section>
 
+        <section class="input flex user padding-user">
+            <div>
+                <p class="flex advertencia"><i class="fa-solid fa-circle-exclamation"></i>Solo letras minúsculas y sin
+                    acento</p>
+                <div class="flex flex-button">
+                    <button type="button" onclick="encriptar()" class="btn button-blue">Encriptar</button>
+                    <button type="button" onclick="desencriptar()" class="btn button-grey">Desencriptar</button>
+                </div>
+            </div>
         </section>
-        <section>
 
+        <section class="output flex translation not-found padding-result">
+            <img src="./src/assets/img/search.png" alt="Not Found">
+            <p class="bold empty">Ningún mensaje fue encontrado</p>
+            <p class="empty-legend">Ingresa el texto que deseas encriptar o desencriptar.</p>
         </section>
-        <footer class="footer"></footer>
+        <section class="output flex translation text-found display-none padding-result">
+            <textarea id="inputCopy" rows="4" placeholder="Resultado" disabled></textarea>
+            <button type="button" onclick="copy()" class="btn button-grey">Copiar</button>
+        </section>
+
+        <footer class="footer flex">
+            <p>Realizado por <span class="bold">Renzo Condori</span></p>
+            <div class="flex icons">
+                <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/renzo-condori-guerra"><i class="fa-brands fa-linkedin"></i></a>
+                <a target="_blank" rel="noopener" href="https://github.com/krcondorig"><i
+                        class="fa-brands fa-github"></i></a>
+            </div>
+        </footer>
     </main>
-    
+    <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js
+"></script>
+    <script src="https://kit.fontawesome.com/b9ce275efe.js" crossorigin="anonymous"></script>
     <script src="./src/scripts/main.js"></script>
 </body>
+
 </html>
